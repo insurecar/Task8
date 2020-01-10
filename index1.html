@@ -3,39 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
     <style>
-        .box {
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
             display: inline-block;
-            margin: 16px;
             position: relative;
-            border-bottom: 1px dotted #000;
+            margin: 16px;
+            border-bottom: 1px dotted black;
             cursor: pointer;
         }
 
-        span {
+        .container__tooltip {
             display: none;
             position: absolute;
             bottom: -40px;
             padding: 8px;
             border-radius: 4px;
-            background: grey;
+            background-color: gray;
             color: white;
         }
 
-        .box:hover span {
+        .container:hover .container__tooltip {
             display: block;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <div title="I'am a title text">Hover over me</div>
-        <span>I'm a tooltip</span>
+    <div class="container">
+        <div class="container__text" title="I'm a title text">
+            Hover over me
+        </div>
+        <span class="container__tooltip">I'm a tooltip</span>
     </div>
 </body>
 
